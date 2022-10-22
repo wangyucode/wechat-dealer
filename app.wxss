@@ -1,0 +1,15 @@
+/**app.wxss**/
+page {
+  background-color: #F7ECD2;
+}
+
+.vbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hbox {
+  display: flex;
+  align-items: center;
+}

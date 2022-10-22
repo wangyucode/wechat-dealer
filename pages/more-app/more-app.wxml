@@ -1,0 +1,15 @@
+<!-- pages/my/support-operation/more-app/more-app.wxml -->
+<view class='view-container'>
+<navigator wx:for="{{apps}}" target="miniProgram" open-type="navigate" app-id="{{item.appid}}" version="release">
+  <view class='my-item' hover-class='my-item-hover'>
+    <image class="image-logo" src='{{item.img}}' />
+    <view class="vbox">
+      <text class="text-logo">{{item.name}}</text>
+      <text class='my-item-desc'>{{item.note}}</text>
+    </view>
+    <view class='flex-open'></view>
+    <image class='my-item-right-arrow' src='/assets/icons/arrow_down.png'></image>
+  </view>
+  </navigator>
+  <view style='flex: 1'></view>
+</view>

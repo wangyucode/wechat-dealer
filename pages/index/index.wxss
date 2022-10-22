@@ -1,0 +1,101 @@
+/**index.wxss**/
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 24rpx;
+}
+
+.note {
+  font-size: 28rpx;
+  padding: 16rpx 24rpx;
+  display: block;
+}
+
+.card-box {
+  padding: 32rpx;
+  gap: 32rpx;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 327rpx;
+  height: 327rpx;
+  border-radius: 24rpx;
+  justify-content: center;
+  box-shadow: 4rpx 4rpx 8rpx rgba(0, 0, 0, 0.2);
+}
+
+.card:active:not(.more){
+  opacity: 0.7;
+}
+
+.icon {
+  width: 156rpx;
+  height: 156rpx;
+}
+
+.name {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 16rpx;
+}
+
+.undercover {
+  background-color: #facc15;
+}
+
+.wolf {
+  background-color: #c084fc;
+}
+
+.evil {
+  background-color: #f472b6;
+}
+
+.lot {
+  background-color: #34d399;
+}
+
+.dice {
+  background-color: #38bdf8;
+}
+
+.more {
+  flex-wrap: wrap;
+  box-shadow: none;
+  gap: 24rpx;
+  justify-content: start;
+}
+
+.small {
+  width: 140rpx !important;
+  height: 140rpx;
+}
+
+.small .icon{
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.small .name{
+  font-size: 24rpx;
+}
+
+.feedback{
+  background-color: #a3e635;
+}
+
+.share{
+  background-color: #f87171;
+}
+
+.log{
+  background-color: #22d3ee;
+}
+
+.apps{
+  background-color: #818cf8;
+}

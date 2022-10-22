@@ -1,0 +1,5 @@
+<!--pages/about/feedback/feedback.wxml-->
+<view class='container-feed'>
+  <textarea placeholder='期待您的建议！' bindinput='contentInput'></textarea>
+  <button bindtap='submit'>提交</button>
+</view>

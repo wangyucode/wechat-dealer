@@ -1,0 +1,56 @@
+/* pages/my/support-operation/more-app/more-app.wxss */
+
+page {
+    height: 100%;
+}
+
+.vbox{
+  flex: 1;
+  align-items: flex-start;
+}
+
+.view-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.my-item {
+    display: flex;
+    align-items: center;
+    padding: 12rpx 24rpx;
+    border-bottom: 1rpx #e69f42 solid;
+}
+
+.my-item-hover {
+    opacity: 0.7;
+}
+
+.my-item-text {
+    font-size: 26rpx;
+}
+
+.my-item-desc {
+    font-size: 24rpx;
+    color: #555;
+    margin-top: 12rpx;
+}
+
+.my-item-right-arrow {
+    width: 36rpx;
+    height: 36rpx;
+    flex-shrink: 0;
+    
+}
+
+.image-logo {
+    width: 128rpx;
+    height: 128rpx;
+    margin-right: 24rpx;
+    flex-shrink: 0;
+}
+
+.text-logo {
+    font-size: 26rpx;
+    font-weight: bold;
+}
