@@ -28,11 +28,10 @@
       <text class="hbox role">卧底：{{u}}</text>
       <button class="create" bindtap="onCreate">创建</button>
     </view>
+
     <view class="menu" wx:if="{{showJoin}}">
       <input placeholder="* 房间号" class="room" type="number" maxlength="4"></input>
       <button class="join" bindtap="onJoin">加入</button>
     </view>
   </page-container>
-
-
 </view>

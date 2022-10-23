@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/feedback/feedback",
     "pages/more-app/more-app",
-    "pages/undercover/ready"
+    "pages/undercover/ready",
+    "pages/undercover/room/room"
   ],
   "window": {
     "backgroundTextStyle": "light",

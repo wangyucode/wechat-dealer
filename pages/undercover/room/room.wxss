@@ -1,0 +1,9 @@
+/* pages/undercover/room/room.wxss */
+.main {
+  padding: 24rpx;
+}
+
+.room {
+  font-size: 32rpx;
+  font-weight: bold;
+}

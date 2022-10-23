@@ -1,4 +1,5 @@
 // pages/my/support-operation/more-app/more-app.js
+const app = getApp();
 Page({
 
   data: {
@@ -14,7 +15,7 @@ Page({
       title: '请稍后...',
     });
     wx.request({
-      url: 'https://wycode.cn/node/apps',
+      url: app.globalData.serverHost + '/node/apps',
       enableHttp2: true,
       enableQuic: true,
       enableCache: true,

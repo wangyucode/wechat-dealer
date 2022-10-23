@@ -1,4 +1,5 @@
 // pages/undercover/ready.js
+const app = getApp();
 Page({
 
   data: {
@@ -57,4 +58,28 @@ Page({
       c
     })
   },
+
+  onCreate: function(){
+    this.setData({showCreate: false});
+    wx.showLoading({
+      title: '请稍后...',
+      mask: true
+    });
+    wx.request({
+      url: app.globalData.serverHost + '/node/dealer/create?type=0',
+      enableHttp2: true,
+      enableQuic: true,
+      enableCache: true,
+      success: (res) => {
+        console.log('create->', res);
+        wx.navigateTo({
+          url: `/pages/undercover/room/room?id=${res.data}&pid=1`,
+        });
+      },
+      complete: () => {
+        wx.hideLoading();
+      }
+    })
+    
+  }
 })

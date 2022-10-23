@@ -5,6 +5,30 @@ const app = getApp()
 Page({
   onLoad:function(){
     this.setData({version: app.globalData.version});
+    wx.showLoading({
+      title: '请稍后...',
+      mask: true
+    });
+    wx.login({
+      success (res) {
+        if (res.code) {
+          wx.request({
+            url: `${app.globalData.serverHost}/node/dealer/login?code=${res.code}`,
+            enableHttp2: true,
+            enableQuic: true,
+            enableCache: true,
+            success: (res) => {
+              console.log('login->', res);
+            },
+            complete: () => {
+              wx.hideLoading();
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
   },
 
   onShareAppMessage: function(){

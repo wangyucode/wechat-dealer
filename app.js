@@ -2,6 +2,7 @@
 App({
   globalData: {
     version: "1.0",
-    preview: true
+    preview: true,
+    serverHost: 'http://localhost:8082'
   }
 })
