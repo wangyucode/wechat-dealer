@@ -2,26 +2,26 @@
 <text class="title">卧底狼人血染聚会抓阄发牌员 v{{version}}</text>
 <text class="note">线下聚会发牌员，支持多种游戏（谁是卧底，狼人杀，血染钟楼，抓阄）的发牌，分配角色支持机器人（AI）全自动法官，上帝说书人...</text>
 <view class="card-box hbox">
-  <view class="card undercover vbox">
+  <navigator class="card undercover vbox"  open-type="navigate" url="/pages/undercover/ready">
     <image src="/assets/icons/spy.png" class="icon"></image>
     <text class="name">谁是卧底</text>
-  </view>
-  <view class="card wolf vbox">
+  </navigator>
+  <navigator class="card wolf vbox">
     <image src="/assets/icons/wolf.png" class="icon"></image>
     <text class="name">狼人杀</text>
-  </view>
-  <view class="card evil vbox">
+  </navigator>
+  <navigator class="card evil vbox">
     <image src="/assets/icons/evil.png" class="icon"></image>
     <text class="name">血染钟楼</text>
-  </view>
-  <view class="card dice vbox">
+  </navigator>
+  <navigator class="card dice vbox">
     <image src="/assets/icons/dice.png" class="icon"></image>
     <text class="name">骰子</text>
-  </view>
-  <view class="card lot vbox">
+  </navigator>
+  <navigator class="card lot vbox">
     <image src="/assets/icons/lot.png" class="icon"></image>
     <text class="name">抽签抓阄</text>
-  </view>
+  </navigator>
   <view class="card hbox more">
     <navigator class="card vbox small feedback" open-type="navigate" url="/pages/feedback/feedback">
       <image src="/assets/icons/feedback.png" class="icon"></image>

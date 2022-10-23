@@ -1,0 +1,70 @@
+/* pages/undercover/ready.wxss */
+.main {
+  padding: 24rpx;
+}
+
+.detail-label {
+  align-self: flex-start;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.detail {
+  margin: 16rpx 0;
+}
+
+button {
+  width: 100% !important;
+  margin: 16rpx;
+  color: white !important;
+}
+
+button:active {
+  opacity: 0.7;
+}
+
+.open-create-menu, .create {
+  background-color: #f97316;
+}
+
+.open-join-menu, .join {
+  background-color: #84cc16;
+}
+
+.hbox,
+.u {
+  width: 700rpx;
+  height: 80rpx;
+  font-size: 26rpx;
+}
+
+.role {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-right: 24rpx;
+}
+
+switch {
+  margin-right: 32rpx;
+  margin-left: 8rpx;
+}
+
+slider {
+  flex-grow: 1;
+}
+
+.input-placeholder{
+  color: #fdba74;
+}
+
+.menu{
+  background-color: #f8f0dc;
+  padding: 48rpx 24rpx;
+}
+
+.room, .name{
+  padding: 16rpx;
+  border: #f97316 1rpx solid;
+  border-radius: 8rpx;
+  margin-bottom: 32rpx;
+}

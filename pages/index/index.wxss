@@ -73,6 +73,7 @@
 .small {
   width: 140rpx !important;
   height: 140rpx;
+  padding: 0 !important;
 }
 
 .small .icon{

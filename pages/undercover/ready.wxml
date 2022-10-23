@@ -1,0 +1,38 @@
+<!--pages/undercover/ready.wxml-->
+<view class="vbox main">
+  <text class="detail-label">玩法说明：</text>
+  <text class="detail">“谁是卧底”是一个非常有趣，风靡全国的比拼语言表述能力、知识面与想象力的游戏。非常适合朋友聚会时玩，能很好地促进彼此感情，也可以用于团队破冰，能在很短的时间内让彼此熟悉起来。
+    ① 游戏支持4~12人参与。
+    ② 由软件随机出两个相近的词，其中有1~3人的词和其他人不不同，被称为卧底。其他所有人的词相同，被称为平民。
+    ③ 每人用一句话描述自己拿到的词语，最好不要太过明显，既不能让卧底察觉，也要给同伴以暗示。
+    ④ 拿到白板角色的玩家需要根据别人的发言猜测并发言，白板属于平民。
+    ⑤ 每轮描述完毕，所有在场的人投票选出怀疑的卧底人选，得票最多的人出局。若卧底出局，则游戏结束。若卧底未出局，游戏继续。如有两人得票相同，则进入PK，大家再从两人中间投出一个。
+    ⑥ 若卧底撑到最后一轮（场上剩3人时），则卧底获胜，反之，则平民胜利。
+  </text>
+
+  <button class="open-create-menu" bindtap="onCreateMenu">创建房间</button>
+  <button class="open-join-menu" bindtap="onJoinMenu">加入房间</button>
+
+  <page-container show="{{showJoin || showCreate}}" bind:afterleave="onLeaveMenu">
+    <view class="menu" wx:if="{{showCreate}}">
+      <view class="hbox">
+        <text class="role">总人数：{{all}}</text>
+        <slider value="{{all}}" bindchanging="onAllChange" bindchange="onAllChange" min="4" max="12" backgroundColor="#fed7aa" activeColor="#f97316" block-color="#fdba74" block-size="18"></slider>
+      </view>
+      <view class="hbox">
+        <text class="role">白板：{{b}}</text>
+        一个白板<switch color="#f97316" bindchange="onOneBlank" checked="{{oneBlank}}"></switch>
+        全是白板<switch color="#f97316" bindchange="onAllBlank" checked="{{allBlank}}"></switch>
+      </view>
+      <text class="hbox role">平民：{{c}}</text>
+      <text class="hbox role">卧底：{{u}}</text>
+      <button class="create" bindtap="onCreate">创建</button>
+    </view>
+    <view class="menu" wx:if="{{showJoin}}">
+      <input placeholder="* 房间号" class="room" type="number" maxlength="4"></input>
+      <button class="join" bindtap="onJoin">加入</button>
+    </view>
+  </page-container>
+
+
+</view>

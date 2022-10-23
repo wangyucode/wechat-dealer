@@ -1,14 +1,15 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/feedback/feedback",
-    "pages/more-app/more-app"
+    "pages/more-app/more-app",
+    "pages/undercover/ready"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FA9E55",
     "navigationBarTitleText": "发牌员",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
