@@ -1,6 +1,7 @@
 /**app.wxss**/
 page {
   background-color: #F7ECD2;
+  height: 100%;
 }
 
 .vbox {

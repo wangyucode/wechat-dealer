@@ -1,10 +1,9 @@
-// pages/undercover/ready.js
-const app = getApp();
+// pages/undercover/room/room.js
 Page({
 
   data: {
+    id: 0,
     showCreate: false,
-    showJoin: false,
     oneBlank: false,
     b: 0,
     u: 1,
@@ -13,16 +12,65 @@ Page({
     allBlank: false
   },
 
+  onLoad({id}) {
+    this.setData({id});
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+
+  },
+
   onCreateMenu: function () {
     this.setData({ showCreate: true });
   },
 
-  onJoinMenu: function () {
-    this.setData({ showJoin: true });
-  },
-
   onLeaveMenu: function () {
-    this.setData({ showJoin: false, showCreate: false });
+    this.setData({ showCreate: false });
   },
 
   onOneBlank: function ({ detail: { value } }) {
@@ -58,28 +106,4 @@ Page({
       c
     })
   },
-
-  onCreate: function(){
-    this.setData({showCreate: false});
-    wx.showLoading({
-      title: '请稍后...',
-      mask: true
-    });
-    wx.request({
-      url: app.globalData.serverHost + '/node/dealer/create?type=0',
-      enableHttp2: true,
-      enableQuic: true,
-      enableCache: true,
-      success: (res) => {
-        console.log('create->', res);
-        wx.navigateTo({
-          url: `/pages/undercover/room/room?id=${res.data}&pid=1`,
-        });
-      },
-      complete: () => {
-        wx.hideLoading();
-      }
-    })
-    
-  }
 })

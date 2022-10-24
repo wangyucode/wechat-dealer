@@ -1,0 +1,27 @@
+<!--pages/undercover/ready.wxml-->
+<view class="vbox main">
+  <text class="detail-label">玩法说明：</text>
+  <text class="detail">{{note}}</text>
+
+  <view class="actions vbox">
+    <button class="create" bindtap="onCreate">创建房间</button>
+    <input placeholder="* 房间号" class="room" type="number" maxlength="4"></input>
+    <button class="join" bindtap="onJoin">加入房间</button>
+  </view>
+
+  <page-container show="{{showCreate}}" bind:afterleave="onLeaveMenu">
+    <view class="menu" wx:if="{{showCreate}}">
+      <view class="hbox">
+        <text class="role">总人数：{{all}}</text>
+        <slider value="{{all}}" bindchanging="onAllChange" bindchange="onAllChange" min="4" max="12" backgroundColor="#fed7aa" activeColor="#f97316" block-color="#fdba74" block-size="18"></slider>
+      </view>
+      <view class="hbox">
+        <text class="role">白板：{{b}}</text>
+        一个白板<switch color="#f97316" bindchange="onOneBlank" checked="{{oneBlank}}"></switch>
+        全是白板<switch color="#f97316" bindchange="onAllBlank" checked="{{allBlank}}"></switch>
+      </view>
+      <text class="hbox role">平民：{{c}}</text>
+      <text class="hbox role">卧底：{{u}}</text>
+    </view>
+  </page-container>
+</view>

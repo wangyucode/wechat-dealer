@@ -1,4 +1,0 @@
-<!--pages/undercover/room/room.wxml-->
-<view class="vbox main">
-  <text class="room">房间号：{{id}}，你是{{pid}}号玩家，房间人数{{}}/{{}}</text>
-</view>
