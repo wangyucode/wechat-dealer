@@ -1,4 +1,14 @@
 <!--pages/undercover/room/room.wxml-->
 <view class="vbox main">
   <text class="room">房间号：{{id}}，你是{{pnum}}号玩家，房间人数{{}}/{{}}</text>
+  <view class="hbox center">
+   <view class="vbox players">
+   </view>
+   <text class="msg">{{messages}}</text>
+   <view class="vbox players">
+   </view>
+  </view>
+  <view class="hbox actions">
+    <button class="start">开始</button>
+  </view>
 </view>

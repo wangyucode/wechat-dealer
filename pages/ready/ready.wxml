@@ -5,7 +5,7 @@
 
   <view class="actions vbox">
     <button class="create" bindtap="onCreate">创建房间</button>
-    <input placeholder="* 房间号" class="room" type="number" maxlength="4"></input>
+    <input placeholder="* 房间号" class="room" type="number" maxlength="4" bindinput="onInputRoomId"></input>
     <button class="join" bindtap="onJoin">加入房间</button>
   </view>
 

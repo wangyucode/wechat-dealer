@@ -1,9 +1,25 @@
 /* pages/undercover/room/room.wxss */
 .main {
   padding: 24rpx;
+  padding-bottom: 48rpx;
+  box-sizing: border-box;
+  height: 100%;
+  gap: 24rpx;
 }
 
 .room {
   font-size: 32rpx;
   font-weight: bold;
+}
+
+.center {
+  width: 100%;
+  flex: 1;
+  background: red;
+}
+
+.msg {
+  background: blue;
+  flex: 1;
+  height: 100%;
 }

@@ -1,4 +1,4 @@
-import { getTypeName, getTypeNote } from "../util/utils";
+import { getTypeName, getTypeNote } from "../../util/utils";
 
 // pages/undercover/ready.js
 const app = getApp();
@@ -9,6 +9,7 @@ Page({
   },
 
   type: 0,
+  rid: 0,
 
   onLoad: function ({ type }) {
     this.type = Number.parseInt(type);
@@ -19,7 +20,6 @@ Page({
   },
 
   onCreate: function () {
-    this.setData({ showCreate: false });
     wx.showLoading({
       title: '请稍后...',
       mask: true
@@ -35,12 +35,56 @@ Page({
           wx.navigateTo({
             url: `/pages/undercover/room?id=${res.data.payload}`,
           });
+        } else {
+          app.login(this.onCreate);
         }
       },
       complete: () => {
         wx.hideLoading();
       }
-    })
+    });
 
+  },
+
+  onInputRoomId: function ({ detail: { value } }) {
+    this.rid = Number.parseInt(value);
+  },
+
+  onJoin: function () {
+    if (this.rid > 0) {
+      wx.showLoading({
+        title: '请稍后...',
+        mask: true
+      });
+      wx.request({
+        url: `${app.globalData.serverHost}/node/dealer/join?id=${this.rid}&type=${this.type}&pid=${app.globalData.pid}`,
+        enableHttp2: true,
+        enableQuic: true,
+        enableCache: true,
+        success: (res) => {
+          wx.hideLoading();
+          console.log('join->', res);
+          if (res.data.success) {
+            wx.navigateTo({
+              url: `/pages/undercover/room?id=${res.data.payload}`,
+            });
+          } else if (res.statusCode === 404) {
+            wx.showToast({
+              title: '房间号错误',
+              icon: "error"
+            });
+          } else if (res.statusCode === 420) {
+            app.login();
+          } else if (res.statusCode === 401) {
+            app.login(this.onJoin);
+          }
+        }
+      });
+    } else {
+      wx.showToast({
+        title: '房间号错误',
+        icon: "error"
+      });
+    }
   }
 })
