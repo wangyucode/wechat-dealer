@@ -4,7 +4,7 @@
   padding-bottom: 48rpx;
   box-sizing: border-box;
   height: 100%;
-  gap: 24rpx;
+  gap: 32rpx;
 }
 
 .room {
@@ -15,11 +15,56 @@
 .center {
   width: 100%;
   flex: 1;
-  background: red;
+  gap: 24rpx;
 }
 
 .msg {
-  background: blue;
   flex: 1;
   height: 100%;
+  border: #e69f42 1rpx solid;
+  border-radius: 12rpx;
+  background-color: #efe6cd;
+  padding: 8rpx;
+  font-size: 22rpx;
+}
+
+.avatar {
+  height: 96rpx;
+  width: 96rpx;
+  border: #e69f42 1rpx solid;
+  border-radius: 999rpx;
+}
+
+.name {
+  font-size: 24rpx;
+}
+
+.tag{
+  font-size: 22rpx;
+  background-color: #e69f42;
+  padding: 4rpx 16rpx;
+  border-radius: 6rpx;
+  color: #fff;
+}
+
+.players {
+  justify-content: space-between;
+  height: 100%;
+  width: 128rpx;
+}
+
+.player:active{
+  background-color: rgba(0,0,0,0.1);
+}
+
+.player {
+  gap: 8rpx;
+  width: unset !important;
+  padding: 0 !important;
+  background: none;
+  padding: 16rpx !important;
+}
+
+.actions{
+  gap:24rpx;
 }
