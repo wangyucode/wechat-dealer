@@ -3,7 +3,7 @@
   <text class="room">房间号：{{id}}，你是{{pnum}}号玩家</text>
   <view class="hbox center">
     <view class="vbox players">
-      <button class="vbox player" wx:for="{{leftPlayers}}" wx:key="seat" open-type="share">
+      <button class="vbox player" wx:for="{{leftPlayers}}" wx:key="seat" open-type="{{item.playerId?'':'share'}}" data-seat="{{item.seat}}">
         <image class="avatar" src="{{item.avatar}}"></image>
         <text class="name">{{item.name}}</text>
         <text class="tag" wx:if="{{index === 0}}">房主</text>
@@ -11,7 +11,7 @@
     </view>
     <text class="msg">{{message}}</text>
     <view class="vbox players">
-      <button class="vbox player" wx:for="{{rightPlayers}}" wx:key="seat" open-type="share">
+      <button class="vbox player" wx:for="{{rightPlayers}}" wx:key="seat" open-type="{{item.playerId?'':'share'}}" data-seat="{{item.seat}}">
         <image class="avatar" src="{{item.avatar}}"></image>
         <text class="name">{{item.name}}</text>
       </button>

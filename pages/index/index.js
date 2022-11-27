@@ -3,9 +3,40 @@
 const app = getApp()
 
 Page({
-  onLoad: function () {
+  onLoad: function ({ rid, type }) {
     this.setData({ version: app.globalData.version });
-    app.login();
+    app.login(() => {
+      if (rid) {
+        this.joinRoom(rid, type);
+      }
+    });
+  },
+
+  joinRoom: function(rid, type){
+    wx.showLoading({
+      title: '请稍后...',
+      mask: true
+    });
+    wx.request({
+      url: `${app.globalData.serverHost}/node/dealer/join?id=${rid}&type=${type}&pid=${app.globalData.pid}`,
+      enableHttp2: true,
+      enableQuic: true,
+      enableCache: true,
+      success: (res) => {
+        wx.hideLoading();
+        console.log('join->', res);
+        if (res.data.success) {
+          wx.navigateTo({
+            url: `/pages/undercover/room?id=${res.data.payload}`,
+          });
+        } else {
+          wx.showToast({
+            title: res.data.message,
+            icon: "error"
+          });
+        }
+      }
+    });
   },
 
   onShareAppMessage: function () {

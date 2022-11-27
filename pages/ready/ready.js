@@ -68,15 +68,11 @@ Page({
             wx.navigateTo({
               url: `/pages/undercover/room?id=${res.data.payload}`,
             });
-          } else if (res.statusCode === 404) {
+          } else {
             wx.showToast({
-              title: '房间号错误',
+              title: res.data.message,
               icon: "error"
             });
-          } else if (res.statusCode === 420) {
-            app.login();
-          } else if (res.statusCode === 401) {
-            app.login(this.onJoin);
           }
         }
       });
